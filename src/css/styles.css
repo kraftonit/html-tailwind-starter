@@ -1,11 +1,151 @@
-@import "./tailwind.css";
-.name {
-    color: red;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+/* =======================================================
+                  global styles
+=======================================================*/
+html {
+  @apply font-poppins scroll-smooth;
 }
+
+body {
+  @apply text-base bg-white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply text-secondary-500 font-semibold;
+}
+
+h1 {
+  @apply leading-[44px] text-4xl md:text-[46px] md:leading-[56px];
+}
+
+h2 {
+  @apply text-[32px] leading-[40px] md:text-[38px] md:leading-[46px];
+}
+
+h3 {
+  @apply text-[28px] leading-[35px] md:text-[30px] md:leading-[38px];
+}
+
+h4 {
+  @apply text-2xl leading-8;
+}
+
+h5 {
+  @apply leading-[26px] text-xl font-medium;
+}
+
+h6 {
+  @apply leading-[23px] text-base;
+}
+
+p {
+  @apply text-base leading-7 text-gray-700;
+}
+
+a {
+  @apply text-primary-900 text-base duration-300 hover:text-primary-500
+    active:text-primary-700 leading-5;
+}
+
+svg {
+  @apply size-6;
+}
+
+.wrapper {
+  @apply px-[25px] md:px-[60px] max-w-full;
+}
+
+.gradient{
+  background: linear-gradient(266deg, #FACD00 2.55%, #0058E6 59.33%);
+}
+  
+.gradient-text{
+  background: linear-gradient(266deg, #FACD00 2.55%, #0058E6 59.33%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+/* ============= Buttons ============= */
+.btn {
+  @apply px-5 py-2.5 rounded-full flex items-center justify-center gap-1.5 text-nowrap;
+}
+
+.btn-primary {
+  @apply  text-white rounded-full gradient;
+  box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.btn-outline {
+  @apply border border-primary-100 text-sm;
+}
+
+.gradient-btn {
+  @apply bg-gradient-to-r from-primary-500 text-white;
+}
+
+
+
+
+/* ==========================================
+                  header
+==========================================*/
+.header {
+  @apply wrapper sticky top-0  mx-auto py-7 md:py-0 flex items-center justify-between bg-slate-50;
+}
+
+.logo {
+  @apply focus:outline-none;
+}
+
+.hamburger {
+  @apply *:size-6 p-2 flex cursor-pointer items-center justify-center border
+  border-blue-500 text-blue-500 md:hidden rounded-xlg;
+}
+
+.menu-close {
+  @apply mr-8 mt-3 ml-auto cursor-pointer p-1 text-xl md:hidden;
+}
+.toggle {
+  @apply hidden;
+}
+
+.toggle:checked ~ .nav-menu {
+  @apply  visible opacity-100 h-[100vh] md:h-auto;
+}
+.nav-menu {
+  @apply invisible absolute top-0 right-0 z-50 flex w-full flex-col items-center
+  gap-4 bg-white p-5 pr-0 opacity-0 duration-100 md:opacity-100 md:visible
+  md:gap-5 md:relative md:flex-row md:justify-center md:bg-transparent;
+}
+
+.nav-menu-links {
+  @apply *:capitalize mx-auto flex flex-col items-center gap-5 md:gap-0  md:flex-row;
+}
+
+.nav-menu-links a {
+  @apply px-[30px];
+}
+
+.active {
+  @apply text-primary-500;
+}
+
+.signin-btn {
+  @apply cursor-pointer md:ml-auto;
+}
+
